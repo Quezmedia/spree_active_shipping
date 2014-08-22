@@ -7,7 +7,7 @@ class Spree::Admin::ActiveShippingSettingsController < Spree::Admin::BaseControl
     @preferences_CanadaPost = [:canada_post_login]
     @preferences_OriginAddress = [:origin_country, :origin_state, :origin_city, :origin_zip]
     @preferences_GeneralSettings = [:units, :unit_multiplier, :default_weight, :handling_fee, 
-      :max_weight_per_package, :test_mode]
+      :max_weight_per_package, :test_mode, :aditional_shipping_fee]
 
     @config = Spree::ActiveShippingConfiguration.new
   end

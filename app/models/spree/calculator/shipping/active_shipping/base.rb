@@ -40,7 +40,7 @@ module Spree
           rate = rates_result[self.class.description]
 
           return nil unless rate
-          rate = rate.to_f + (Spree::ActiveShipping::Config[:handling_fee].to_f || 0.0)
+          rate = rate.to_f + (Spree::ActiveShipping::Config[:aditional_shipping_fee].to_f/100.0 * rate.to_f) + (Spree::ActiveShipping::Config[:handling_fee].to_f || 0.0)
 
           # divide by 100 since active_shipping rates are expressed as cents
           return (rate)/100.0

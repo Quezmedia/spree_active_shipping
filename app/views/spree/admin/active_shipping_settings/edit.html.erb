@@ -85,7 +85,7 @@
             <% @preferences_GeneralSettings.each do |key|
                 type = @config.preference_type(key) %>
                 <div class="field">
-                  <%= label_tag(key, Spree.t(key) + ': ') + tag(:br) if type != :boolean %>
+                  <%= label_tag(key, Spree.t(key) + ': ') + tag(:br) if type != :boolean%>
                   <%= preference_field_tag(key, @config[key], :type => type) %>
                   <%= label_tag(key, Spree.t(key)) + tag(:br) if type == :boolean %>
                 </div>

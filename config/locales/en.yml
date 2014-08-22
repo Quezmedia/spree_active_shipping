@@ -69,5 +69,7 @@ en:
     ups_settings: "UPS Settings"
     fedex_settings: "FedEx Settings"
     usps_settings: "USPS Settings"
+    handling_fee: "Handling Fee (cents)"
+    aditional_shipping_fee: "Aditional Shipping Fee (%)"
     canada_post_settings: "Canada Post Settings"
     origin_address_settings: "Origin Address Settings"
