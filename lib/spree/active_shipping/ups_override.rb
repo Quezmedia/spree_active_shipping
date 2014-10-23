@@ -88,7 +88,7 @@ module Spree
                  #                   * Shipment/RateInformation element
 
                  #SPREE OVERRIDE Negotiated Rates
-                 if (origin_account = @options[:origin_account].presence || options[:origin_account].presence)
+                 if false # (origin_account = @options[:origin_account].presence || options[:origin_account].presence)
                    shipment << XmlNode.new("RateInformation") do |rate_information|
                      rate_information << XmlNode.new("NegotiatedRatesIndicator", '')
                    end
@@ -250,7 +250,7 @@ module Spree
               xml.elements.each('/*/RatedShipment') do |rated_shipment|
                 service_code    = rated_shipment.get_text('Service/Code').to_s
                 service    = rated_shipment.get_text('Service/Code').to_s
-                negotiated_rate = rated_shipment.get_text('NegotiatedRates/NetSummaryCharges/GrandTotal/MonetaryValue').to_s
+                negotiated_rate = '' # rated_shipment.get_text('NegotiatedRates/NetSummaryCharges/GrandTotal/MonetaryValue').to_s
                 total_price     = negotiated_rate.blank? ? rated_shipment.get_text('TotalCharges/MonetaryValue').to_s.to_f : negotiated_rate.to_f
                 currency        = negotiated_rate.blank? ? rated_shipment.get_text('TotalCharges/CurrencyCode').to_s : rated_shipment.get_text('NegotiatedRates/NetSummaryCharges/GrandTotal/CurrencyCode').to_s
                 
